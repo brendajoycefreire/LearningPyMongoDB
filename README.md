@@ -42,3 +42,19 @@ else:
     echo.> routes.py
     echo.> models.py
     echo.> .env
+
+# Vamos começar implementando um /endpoint root simples que retorna uma mensagem de boas-vindas. Abra o main.pyarquivo no seu editor de código favorito e adicione o seguinte:
+
+pymongo-fastapi-crud/main.py
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the PyMongo tutorial!"}
+
+# Salve o arquivo e execute o aplicativo usando o uvicornpacote que foi instalado junto com o fastapipacote.
+
+python -m uvicorn main:app --reload
